@@ -176,3 +176,34 @@ Port: SWD, Frequency: 8000, Mode: Hot Plug, Access Port:1, Reset mode: Hardware 
 5. Flash xxxx_sign.bin (build from STM32CubeIDE) at address `0x70100000`
 
 ![figure5](./pictures/figure5.PNG)
+
+# Boot mode
+![figure6](./pictures/figure6.PNG)
+
+Boot mode 00 for flash boot(load binary from flash), and 01 for dev boot(flashing binary from STM32Cubeprogrammer).
+
+![figure7](./pictures/figure7.jpg)
+
+(Boot mode 00 for flash boot)
+
+
+![figure8](./pictures/figure8.jpg)
+
+(Boot mode 01 for dev boot)
+
+# USB power
+if you have usb c to usb c cable and the power supply can supply above 500mA, that's ok. if you connected usb-c to usb-c cable to ST Link usb and short 1-2, you can flash and run AI model with camera
+
+HOWEVER, if you only have usb a to usb c cable and power supply can't supply above 500mA, additional procedures are needed.
+
+1. for flashing, connect cable to ST link usb and short 1-2
+2. for run AI model with camera, connect cable to **usb 1** and short **3-4**
+
+![figure9](./pictures/figure9.jpg)
+
+![figure10](./pictures/figure10.jpg)
+
+# references
+- [STM32n6570-dk documentation](https://www.st.com/en/evaluation-tools/stm32n6570-dk.html#documentation)
+- [STM32N6-GettingStarted-ObjectDetection docs](https://github.com/STMicroelectronics/STM32N6-GettingStarted-ObjectDetection/tree/main/Doc)
+- [https://community.st.com/t5/stm32-mcus-boards-and-hardware/stm32n6-dk-what-stm-does-not-tell-you-you-need-usb-c-power/td-p/756713](https://community.st.com/t5/stm32-mcus-boards-and-hardware/stm32n6-dk-what-stm-does-not-tell-you-you-need-usb-c-power/td-p/756713)
