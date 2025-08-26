@@ -97,7 +97,7 @@ int32_t app_postprocess_init(void *params_postprocess, NN_Instance_TypeDef *NN_I
 //app_postprocess_od_yolov8_ui.c
 ```
 
-and output of our model is **1x5x4725**
+and output of our model is **1x5x4725** (you can easily check the output size via [Netron](https://netron.app/))
 
 So we modify the `app_config.h' like below:
 ```c
